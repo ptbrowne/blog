@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="My girlfriend graduated from her thesis last year 🚀😍. With the help of many of her colleagues, we made her as PhD gift a custom board game, referencing at the good and challenging times of the thesis. There are some interesting bits here and there on its creation process that I wanted to share.
+Collaborative board game The idea of this board game was simple. It is a turn by turn dice game where each player advances on a 65-squares path symbolizing the tortuous journey of a thesis.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Create a board game collaboratively" />
+<meta property="og:description" content="My girlfriend graduated from her thesis last year 🚀😍. With the help of many of her colleagues, we made her as PhD gift a custom board game, referencing at the good and challenging times of the thesis. There are some interesting bits here and there on its creation process that I wanted to share.
+Collaborative board game The idea of this board game was simple. It is a turn by turn dice game where each player advances on a 65-squares path symbolizing the tortuous journey of a thesis." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/zns-quest/" />
+<meta property="article:published_time" content="2020-05-26T00:06:49+02:00" />
+<meta property="article:modified_time" content="2020-05-26T00:06:49+02:00" />
+<title>Create a board game collaboratively | ptbrowne</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.e4b857e9617eac4a4a1c3dabb6c9228cf9db3603a53343a0cb0bffd23f69f056.css" integrity="sha256-5LhX6WF&#43;rEpKHD2rtskijPnbNgOlM0Ogywv/0j9p8FY=">
+<script defer src="/en.search.min.077cef6d83655e992754e510485da10a5d7fc323793cae2b82bc8e85596a2fa7.js" integrity="sha256-B3zvbYNlXpknVOUQSF2hCl1/wyN5PK4rgryOhVlqL6c="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  <link rel="stylesheet" href="/lightbox/lightbox.min.css">
+<script src="/lightbox/lightbox-plus-jquery.min.js"></script>
+
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><img src="/logo.png" alt="Logo" /><span>ptbrowne</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+
+  
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <span>Posts</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/posts/zns-quest/" class="active">Create a board game collaboratively</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/posts/whispersync-reverse-engineering/" class="">Reverse engineer whispersync</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Create a board game collaboratively</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#collaborative-board-game">Collaborative board game</a></li>
+    <li><a href="#generating-the-cards">Generating the cards</a>
+      <ul>
+        <li><a href="#text--svg">Text → SVG</a></li>
+        <li><a href="#svg--png">SVG → PNG</a></li>
+        <li><a href="#dynamically-sized-text">Dynamically sized text</a></li>
+      </ul>
+    </li>
+    <li><a href="#the-board">The board</a>
+      <ul>
+        <li><a href="#setting-symbol-overrides">Setting Symbol overrides</a></li>
+        <li><a href="#arranging-the-squares-along-a-path">Arranging the squares along a path</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/zns-quest/">Create a board game collaboratively</a>
+  </h1>
+  
+  <h5>May 26, 2020</h5>
+
+
+
+  
+
+  
+
+
+  <p><p>My girlfriend graduated from her thesis last year 🚀😍. With the help of many of
+her colleagues, we made her as PhD gift a custom board game, referencing at the
+good and challenging times of the thesis. There are some interesting bits here
+and there on its creation process that I wanted to share.</p>
+<h2 id="collaborative-board-game">Collaborative board game</h2>
+<p>The idea of this board game was simple. It is a turn by turn dice game where
+each player advances on a 65-squares path symbolizing the tortuous journey of
+a thesis. It is very similar to the squares and ladders game (or Goose game,
+&ldquo;Jeu de l&rsquo;oie&rdquo; in French).</p>
+<blockquote>
+<p>ℹ️ The name of the game is ZnS quest since the subject of the thesis was on <a href="https://www.cerege.fr/fr/theses/maureen-le-bars">the stability of nano-size zinc sulfide particles in organic matter</a>.</p>
+</blockquote>
+<figure class="figure">
+    <img src="/zns-quest-board.jpg" width="500px"/> 
+</figure>
+
+<p>After advancing, each players draws a card randomly from a deck. Each card has
+a picture, a description and a type. The type can be</p>
+<ul>
+<li><em>bonus/malus</em>: making the player go forward/backward by some squares on the board</li>
+<li><em>challenge</em>: you have to do something, eg: tell a joke, and then you can go forward</li>
+<li><em>friend</em>: protects you against future maluses.</li>
+</ul>
+<p>When starting with this idea, I was confident that to be successful, this game
+should have a lot of different cards otherwise it would soon be boring.
+Moreover, I wanted that each colleague could participate easily in the
+creation process. If anyone could create a card, we would have more cards. How
+to make this card creation process fast and easy for anyone ? I thought of using a Dropbox shared folder as a collaborative platform to generate cards.</p>
+<p>I tried to simplify the creation process as much as possible : A folder was shared with all the colleagues. This folder had 1 file describing
+all the cards and a folder containing all the pictures.</p>
+<ol>
+<li>People would edit the file thanks to the &ldquo;Microsoft Word for web&rdquo;</li>
+<li>The file was automatically synced to my computer</li>
+<li>I could run a script every couple of hours to generate the cards as PNG
+images.</li>
+<li>Each card was rendered inside the same synced shared folder so that
+everyone could see the cards they had created</li>
+</ol>
+<p>Here is an excerpt from the file describing cards. Each line is in <code>&lt;number&gt;. &lt;type&gt; | &lt;title&gt; | &lt;description&gt;</code> format.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">18. Bonus | Gâteau de PY | PY t&#39;as fait un gâteau trop bon. 🎲 Si tu fais un 6, tu n&#39;arrives plus à bouger après la première part. Sinon avance d&#39;1 case ! 
+300. Malus | Minion time | Tu te transformes en Minion pendant 1 week-end, recule d&#39;1 page !
+301. Bonus | On est finale | L&#39;OM est en finale de la coupe d&#39;Europe, c&#39;est le oaï dans la rue ! Avance d&#39;1 page
+</code></pre></div><p>Each photo in the picture folder is linked to the right line through the <code>&lt;number&gt;</code>
+part.</p>
+<figure class="figure">
+    <img src="/zns-quest-dropbox-photos.jpg"
+         alt="List of pictures" width="300px"/> <figcaption>
+            <p>List of pictures</p>
+        </figcaption>
+</figure>
+
+<p>The feedback loop was relatively short and people quickly bought in and added
+cards. At the end, more than 250 cards were created collaboratively 🚀.</p>
+<h2 id="generating-the-cards">Generating the cards</h2>
+<p>Here are some technical details on how the cards were generated.</p>
+<h3 id="text--svg">Text → SVG</h3>
+<p>To create the cards from the data, I used SVG templating.</p>
+<p>With the help of Handlebars (a Javascript templating engin), each card was
+rendered as SVG data. I first created the card layout in <a href="https://www.sketch.com/">Sketch</a> for WYSIWYG
+convenience. Then I exported the Artboard as an SVG. Finally, I replaced parts
+of the SVG with placeholders in place of title, description, type, and
+picture.</p>
+<p>Below, you can see an excerpt of the cards&rsquo; SVG template. Handlebars placeholders
+are inside curly braces.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-svg" data-lang="svg"><span style="color:#75715e">&lt;!-- TITLE --&gt;</span>
+<span style="color:#f92672">&lt;rect</span> <span style="color:#a6e22e">x=</span><span style="color:#e6db74">&#34;20&#34;</span> <span style="color:#a6e22e">y=</span><span style="color:#e6db74">&#34;320&#34;</span> <span style="color:#a6e22e">width=</span><span style="color:#e6db74">&#34;284&#34;</span> <span style="color:#a6e22e">height=</span><span style="color:#e6db74">&#34;45&#34;</span><span style="color:#f92672">&gt;&lt;/rect&gt;</span>
+<span style="color:#f92672">&lt;text</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#39;title{{ i }}&#39;</span> <span style="color:#a6e22e">fill=</span><span style="color:#e6db74">&#34;{{ fontColor }}&#34;</span> <span style="color:#a6e22e">font-family=</span><span style="color:#e6db74">&#34;MadScience&#34;</span> <span style="color:#a6e22e">font-size=</span><span style="color:#e6db74">&#34;28&#34;</span> <span style="color:#a6e22e">font-weight=</span><span style="color:#e6db74">&#34;normal&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;tspan</span> <span style="color:#a6e22e">x=</span><span style="color:#e6db74">&#34;50.0940004&#34;</span> <span style="color:#a6e22e">y=</span><span style="color:#e6db74">&#34;330&#34;</span><span style="color:#f92672">&gt;</span>{{ title }} <span style="color:#f92672">&lt;/tspan&gt;</span>
+<span style="color:#f92672">&lt;/text&gt;</span>
+
+<span style="color:#75715e">&lt;!-- DESCRIPTION --&gt;</span>
+<span style="color:#f92672">&lt;rect</span> <span style="color:#a6e22e">x=</span><span style="color:#e6db74">&#34;40&#34;</span> <span style="color:#a6e22e">y=</span><span style="color:#e6db74">&#34;360&#34;</span> <span style="color:#a6e22e">width=</span><span style="color:#e6db74">&#34;250&#34;</span> <span style="color:#a6e22e">height=</span><span style="color:#e6db74">&#34;143&#34;</span><span style="color:#f92672">&gt;&lt;/rect&gt;</span>
+<span style="color:#f92672">&lt;text</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#39;description{{ i }}&#39;</span> <span style="color:#a6e22e">fill=</span><span style="color:#e6db74">&#34;{{ fontColor }}&#34;</span> <span style="color:#a6e22e">font-family=</span><span style="color:#e6db74">&#34;DINPro-Regular, DINPro&#34;</span> <span style="color:#a6e22e">font-size=</span><span style="color:#e6db74">&#34;20&#34;</span> <span style="color:#a6e22e">font-weight=</span><span style="color:#e6db74">&#34;normal&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;tspan</span> <span style="color:#a6e22e">x=</span><span style="color:#e6db74">&#34;137.000014&#34;</span> <span style="color:#a6e22e">y=</span><span style="color:#e6db74">&#34;452&#34;</span><span style="color:#f92672">&gt;</span>{{{ description }}}<span style="color:#f92672">&lt;/tspan&gt;</span>
+<span style="color:#f92672">&lt;/text&gt;</span>
+</code></pre></div><p>At this point I could batch create all the SVG describing the cards.
+But it was still text, and I needed pixels ready to print !</p>
+<h3 id="svg--png">SVG → PNG</h3>
+<p>I tried various SVG renderers and encountered various rendering glitches
+(badly rendered fonts, blurring not supported) with non browser based SVG
+renderers. I finally settled on using Firefox as a rendering engine and
+used its <code>screenshot</code> feature to screenshot pages containing SVGs.</p>
+<p>The <code>screenshot</code> &ldquo;command&rdquo; can be called from the console and the resolution
+of the screenshot can be controlled through the <code>--dpr</code> flag. Having
+a high resolution was very important for the finaly quality of the
+prints.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">:screenshot --fullpage --dpr 2
+</code></pre></div><h3 id="dynamically-sized-text">Dynamically sized text</h3>
+<p>One problem I encountered was that some title and descriptions were
+longer than others and could not fit in the area I had envisionned for them.
+It was needed to reduce the font dynamically so that it could fit.</p>
+<p>Fortunately, all the hard work of sizing the font, decreasing it until it fits
+a given rectangle, while taking care of wrapping, had been done in
+<a href="http://d3plus.org/examples/d3plus-text/resizing-text/">d3plus-text</a> so I had only to include the library and call its methods to
+have my title and description automatically fitted.</p>
+<p>Having the ability to execute Javascript to do dynamic font-sizing was also
+one of the reason behind choosing a browser as the SVG renderer.</p>
+<p>Automating the rendering of the the cards proved important since it was
+possible to change the design of the cards late in the process, based on
+designs made by a graphic designer friend. If this had not been scripted, this
+would have meant changing all the 269 cards 😱.</p>
+<figure class="figure">
+    <img src="/zns-quest-cards.jpg"
+         alt="Some of the cards (one of them has yet to have a good picture)" width="400px"/> <figcaption>
+            <p>Some of the cards (one of them has yet to have a good picture)</p>
+        </figcaption>
+</figure>
+
+<h2 id="the-board">The board</h2>
+<p>For the board, I used Sketch (a vector editor). Its scripting abilities and Symbol made my life a little easier.</p>
+<blockquote>
+<p>ℹ️ <a href="https://www.sketch.com/docs/symbols/">Symbols</a> are ways to reuse graphical elements in Sketch. You can also set
+Overrides in the reused parts to reuse while replacing some part of the
+reused content.</p>
+</blockquote>
+<h3 id="setting-symbol-overrides">Setting Symbol overrides</h3>
+<p>Each square had a little icon inside. I used Sketch scripting ability and its
+Override feature to automatically set the right icon for each square based on
+its index.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) {
+  <span style="color:#a6e22e">square</span>.<span style="color:#a6e22e">overrides</span>.<span style="color:#a6e22e">icon</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;atom&#39;</span>
+} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">2</span>) {
+   <span style="color:#a6e22e">square</span>.<span style="color:#a6e22e">overrides</span>.<span style="color:#a6e22e">icon</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;microscope&#39;</span>
+}
+</code></pre></div><h3 id="arranging-the-squares-along-a-path">Arranging the squares along a path</h3>
+<p>There were several ideas for the path drawn by the squares. The number of
+total squares was also not fixed at first. To be able to quickly react to new
+suggestions and changes, I used the scripting feature of Sketch to
+automatically arrange the squares along a path.</p>
+<p>To do that, I&rsquo;d draw a path in Sketch, export it to SVG, load it in Firefox
+and use the <a href="https://developer.mozilla.org/en-US/docs/Web/API/SVGGeometryElement/getPointAtLength"><code>getPointAtLength</code></a> API to generate positions for the squares. Then
+I copy/pasted those positions back to sketch, and use a script to layout
+the squares according to those positions.</p>
+<p>This allowed me to be able to change the square size, number, and path even at
+the end of the project. This proved important to be able to incorporate
+suggestions from other people : using the script features in Sketch made decisions
+reversible. This was good for rapid iterations.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>I was really proud to have produced a real physical object. I normally deal
+with software projects that get maintained and changed for a long time (hence
+the &ldquo;soft&rdquo; in software). Physical projects are interesting in the sense that
+you cannot change them once shipped : once printed, you will not be able to go
+back and change the cards. This is a big constraint but it is also quite
+liberating since hacks and dirty tricks are much less of a problem.</p>
+<p>More importantly, I was really glad to have found a method so that anyone
+interested could participate. It resulted in a lot of good memories in
+the form of cards. Thanks to Julie, Eleonore, Valenti, Ricardo, Juliette,
+Sue, Aladin and everybody who has participated in this project.</p>
+<p>Some of the code to generate cards can be found <a href="https://github.com/ptbrowne/znsquest">here</a>.</p>
+</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#collaborative-board-game">Collaborative board game</a></li>
+    <li><a href="#generating-the-cards">Generating the cards</a>
+      <ul>
+        <li><a href="#text--svg">Text → SVG</a></li>
+        <li><a href="#svg--png">SVG → PNG</a></li>
+        <li><a href="#dynamically-sized-text">Dynamically sized text</a></li>
+      </ul>
+    </li>
+    <li><a href="#the-board">The board</a>
+      <ul>
+        <li><a href="#setting-symbol-overrides">Setting Symbol overrides</a></li>
+        <li><a href="#arranging-the-squares-along-a-path">Arranging the squares along a path</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

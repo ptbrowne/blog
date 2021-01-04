@@ -1,0 +1,86 @@
+@import "plugins/_numbered";
+
+@font-face {
+  font-family: "Gelasio";
+  src: url("/Gelasio/Gelasio-Regular.ttf") format("truetype");
+}
+
+h1 {
+    font-size: 2.625rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+.book-page .markdown > h1:first-child::before {
+    display: none;
+}
+
+.book-page .markdown > h1:first-child + h5::before {
+    display: none;
+}
+
+.book-page .markdown > h1:first-child .markdown a:visited {
+    color: inherit;
+}
+
+.figure {
+    text-align: center;
+}
+
+figcaption p {
+    margin: 0;
+    font-variant: italic;
+    font-size: small;
+}
+
+.sidenote, .marginnote {
+    $tableOfContentsWidth: 16rem;
+    $horizontalMargins: 2rem;
+    $noteWidth: $tableOfContentsWidth - $horizontalMargins * 2 ;
+    float: right;
+    clear: right;
+    margin-right: calc(-#{$noteWidth} - #{$horizontalMargins});
+    width: $noteWidth;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    line-height: 1.3;
+    vertical-align: baseline;
+    position: relative;
+}
+
+@media (max-width: 56rem) {
+    .sidenote, .marginnote {
+        float: inherit;
+        width: 100%;
+        border-left: 4px solid #e9ecef; // like blockquote
+        padding: 1rem;
+        border-radius: 0.25rem; // like blockquote
+    }
+
+    .sidenote:before, .marginnote:before {
+        content: 'Note: ';
+    }
+}
+
+#TableOfContents {
+    position: inherit;
+}
+
+.lightbox-p {
+    text-align: center;
+    margin: auto;
+}
+
+.lightbox-p a {
+    display: inline-block;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.lightbox-p a:after {
+    display: block;
+    content: attr(data-title);
+    margin: 0.5rem;
+}

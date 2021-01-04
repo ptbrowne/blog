@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on ptbrowne</title>
+    <link>/posts/</link>
+    <description>Recent content in Posts on ptbrowne</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 26 May 2020 00:06:49 +0200</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reverse engineer whispersync</title>
+      <link>/posts/whispersync-reverse-engineering/</link>
+      <pubDate>Tue, 26 May 2020 00:06:49 +0200</pubDate>
+      
+      <guid>/posts/whispersync-reverse-engineering/</guid>
+      <description>I am a big fan of my Kindle. This is the device I&amp;rsquo;d bring over to a desert island. I am also a fairly frequent user of the highlight feature where you can select a bit of text you like and save it. One thing is bothering me though: the lack of open API on the Kindle to retrieve the data about me. Amazon provides the my-clippings.txt file on the Kindle and the &amp;ldquo;Export my annotations via e-mail&amp;rdquo; feature, but both these features cannot be done in the background automatically, and the last read position is not available.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,17 @@
+title: "ptbrowne"
+theme: "book"
+
+params:
+  author: "Patrick Browne"
+  description: ""
+  customCSS:
+    - css/my.css
+  dateFormat: "2006-01-02"
+
+  BookSection: '*'
+  BookLogo: 'logo.png'
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
