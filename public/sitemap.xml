@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/posts/zns-quest/</loc>
+    <lastmod>2020-05-26T00:06:49+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/posts/</loc>
     <lastmod>2020-05-26T00:06:49+02:00</lastmod>
   </url>

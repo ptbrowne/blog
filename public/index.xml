@@ -7,6 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Tue, 26 May 2020 00:06:49 +0200</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Create a board game collaboratively</title>
+      <link>/posts/zns-quest/</link>
+      <pubDate>Tue, 26 May 2020 00:06:49 +0200</pubDate>
+      
+      <guid>/posts/zns-quest/</guid>
+      <description>My girlfriend graduated from her thesis last year 🚀😍. With the help of many of her colleagues, we made her as PhD gift a custom board game, referencing at the good and challenging times of the thesis. There are some interesting bits here and there on its creation process that I wanted to share.
+Collaborative board game The idea of this board game was simple. It is a turn by turn dice game where each player advances on a 65-squares path symbolizing the tortuous journey of a thesis.</description>
+    </item>
+    
+    <item>
       <title>Reverse engineer whispersync</title>
       <link>/posts/whispersync-reverse-engineering/</link>
       <pubDate>Tue, 26 May 2020 00:06:49 +0200</pubDate>
