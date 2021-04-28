@@ -1,6 +1,6 @@
 title: "ptbrowne"
 theme: "book"
-
+publishDir: "docs"
 params:
   author: "Patrick Browne"
   description: ""
