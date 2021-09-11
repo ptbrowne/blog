@@ -1,5 +1,5 @@
 ---
-title: "Create a board game collaboratively"
+title: "Crowd creating a board game"
 date: 2020-05-26T00:06:49+02:00
 ---
 
@@ -8,7 +8,7 @@ her colleagues, we made her as PhD gift a custom board game, referencing at the
 good and challenging times of the thesis. There are some interesting bits here
 and there on its creation process that I wanted to share.
 
-## Collaborative board game
+## Creating cards...together
 
 The idea of this board game was simple. It is a turn by turn dice game where
 each player advances on a 65-squares path symbolizing the tortuous journey of
